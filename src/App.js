@@ -6,7 +6,6 @@ import BookingCalendar from './BookingCalendar';
 import LoginScreen from './Login';
 import Register from './Register'; 
 import PaymentScreen from './Paymentscreen';
-import Receipt from './receipt';
 import CheckoutForm from './CheckoutForm';
 
 function App() {//Sadece buradaki .js dosyaları kullanılıyor
