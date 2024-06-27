@@ -28,6 +28,7 @@ function BookingCalendar() {
   useEffect(() => {
     //İlk Çalıştırılacak komutlar
     checkLoginStatus();
+    
     fetchOrder();
     loadOrder();
   }, []);
@@ -180,10 +181,11 @@ function BookingCalendar() {
     const savedCheckedBoxes = localStorage.getItem('checkedBoxes');
     if (savedCheckedBoxes) {
       setCheckedBoxes(JSON.parse(savedCheckedBoxes));
+      console.log('loadorder',checkedBoxes);
     }
   };
-
-  const postOrder = async () => {//Sepetteki ürünleri google sheet'e post eden fonksiyon
+  
+   const postOrder = async () => {//Sepetteki ürünleri google sheet'e post eden fonksiyon
     const name = localStorage.getItem('username');
     const sheetRows = checkedBoxes.map(box => [box.date, box.title, name, box.choosenField]);
     const sheetRow = [
@@ -260,7 +262,7 @@ function BookingCalendar() {
           title="Sepet"
           visible={isModalVisible}
           onOk={() => {
-            postOrder();
+           // postOrder();
             saveOrder();
             navigate('/Checkout');
             

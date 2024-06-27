@@ -46,6 +46,7 @@ const LoginScreen = () => {
     };*/
     
     
+
     const createAndSaveToken = (username, password) => {// token oluşturuluyor ve local storage kaydediliyor ama devre dışı
       const baseToken = btoa(`${username}:${password}`);
       const token = `mockToken-${baseToken}-${Date.now()}`;
@@ -109,6 +110,7 @@ const LoginScreen = () => {
 
         }
         setLoginStatus();
+        localStorage.removeItem('checkedBoxes');
         //createAndSaveToken(values.username, values.password);
         navigate('/booking');
         
